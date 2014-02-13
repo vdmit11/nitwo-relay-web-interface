@@ -48,4 +48,10 @@ class BinaryMessageExamples:
         request  = bytes.fromhex("55 01 11 00 00 00 10 77  55 01 10 00 00 00 00 66")
         response = bytes.fromhex("22 01 10 00 00 00 00 33")
 
+    class GetStateOfSecondRelayModule:
+        request  = bytes.fromhex("55 02 10 00 00 00 00 67")
+
+    class TurnOffRleay1module2:
+        request  = bytes.fromhex("55 02 12 00 00 00 01 6A 55 02 10 00 00 00 00 67")
+
 
