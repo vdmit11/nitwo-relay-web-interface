@@ -1,6 +1,8 @@
-import socket
 import struct
 import checksum
+
+class InvalidChecksumException(Exception):
+    pass
 
 
 class type:
@@ -54,8 +56,6 @@ def unpack_message(buffer):
     """
 
     if (not checksum.is_valid(buffer)):
-        class InvalidChecksumException(Exception):
-            pass
         formatted_buffer = " ".join(format(byte, "02x") for byte in buffer)
         error_message = "Invalid checksum of the messate: '" + formatted_buffer + "'"
         raise InvalidChecksumException(error_message)
