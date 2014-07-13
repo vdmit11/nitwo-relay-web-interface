@@ -1,5 +1,5 @@
 import struct
-import checksum
+from nitwo_relay_python_client import checksum
 
 class InvalidChecksumException(Exception):
     pass

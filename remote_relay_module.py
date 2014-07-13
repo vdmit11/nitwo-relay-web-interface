@@ -35,9 +35,9 @@ False
 ...     time.sleep(0.1)
 """
 
-import protocol
-import socket
 
+import socket
+from nitwo_relay_python_client import protocol
 
 class RemoteRelayModule:
     MODULE_NUMBER = 1
@@ -48,9 +48,6 @@ class RemoteRelayModule:
 
     relay_states = []
 
-    def __init__(self):
-        self.refresh()
-    
     def refresh(self):
         response = self.send_message(protocol.pack_get_status_request(), True)
         self.relay_states = protocol.unpack_get_status_response(response)
